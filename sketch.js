@@ -254,11 +254,11 @@ function draw() {
 	 			vertex(mouseX, mouseY);
 	 			for (let i = 0; i < flood[l].length; i++) {
 	 				let distance = dist(mouseX, mouseY, flood[l][i].x, flood[l][i].y);
-	 				fill(map(distance, 0, floodSize, 255 / (l + 1), 0));
+	 				fill(map(distance, 0, floodSize, 255 * Math.pow(1 / (l + 1), 0.5), 0));
 		 			vertex(flood[l][i].x, flood[l][i].y);
 		 		}
 				let distance = dist(mouseX, mouseY, flood[l][0].x, flood[l][0].y);
-				fill(map(distance, 0, floodSize, 255 / (l + 1), 0));
+				fill(map(distance, 0, floodSize, 255 * Math.pow(1 / (l + 1), 0.5), 0));
 		 		vertex(flood[l][0].x, flood[l][0].y);
 	 		endShape(CLOSE);
 	 	}
