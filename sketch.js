@@ -175,7 +175,7 @@ function setup() {
 	paths = outline.paths;
 	boundingBox = {x: outline.xMin, y: outline.yMin, w: outline.xMax - outline.xMin, h: outline.yMax - outline.yMin};
 	getWalls();
-	floodSize = 0.5 * Math.min(windowWidth, windowHeight);
+	floodSize = 0.5 * Math.max(windowWidth, windowHeight);
 }
 
 function getFlood(pos, levels) {
@@ -238,7 +238,7 @@ function draw() {
 	noStroke();
 	let blurRadius = 10;
 	let blurCount = 0;
-	let floodLevels = 5;
+	let floodLevels = 6;
  	for (let i = -1; i < blurCount; i++) {
  		let x = mouseX;
  		let y = mouseY;
